@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Geometric Balance Palette */
+  --color-bg-base: #0F0F0F;
+  --color-bg-panel: #121212;
+  --color-bg-card: #1E1E1E;
+  --color-border-subtle: #2A2A2A;
+  --color-accent-pink: #FF3B5C;
+  --color-accent-blue: #45C9FF;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-white antialiased overflow-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .bg-vibrant-gradient {
+    background: linear-gradient(to top right, var(--color-accent-pink), var(--color-accent-blue));
+  }
+  
+  .border-vibrant-gradient {
+    border-image: linear-gradient(to top right, var(--color-accent-pink), var(--color-accent-blue)) 1;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Wittr",
+  "description": "A micro-vlogging app for short, frequent video updates with an immersive swipe feed and one-tap creation.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["video-streaming", "content-creation"]
+}
